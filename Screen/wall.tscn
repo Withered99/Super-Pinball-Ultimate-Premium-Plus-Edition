@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cteiitybluc11"]
 
-[ext_resource type="Script" uid="uid://2irtqxf8oi8o" path="res://StraightWallScript.gd" id="1_xxgf6"]
+[ext_resource type="Script" uid="uid://2irtqxf8oi8o" path="res://Script/StraightWallScript.gd" id="1_xxgf6"]
 
 [node name="StraightWall" type="StaticBody2D" unique_id=601931555]
 script = ExtResource("1_xxgf6")

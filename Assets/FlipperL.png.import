@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxlmfocxl7g80"
-path="res://.godot/imported/verity.png-96cbd1d91c3ee4849332c21e972ea126.ctex"
+uid="uid://bxscrjqdw6liu"
+path="res://.godot/imported/FlipperL.png-ea72a38ba76a98c00e0b6fcfa78244da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://verity.png"
-dest_files=["res://.godot/imported/verity.png-96cbd1d91c3ee4849332c21e972ea126.ctex"]
+source_file="res://Assets/FlipperL.png"
+dest_files=["res://.godot/imported/FlipperL.png-ea72a38ba76a98c00e0b6fcfa78244da.ctex"]
 
 [params]
 

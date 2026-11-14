@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kfrhi0eoa2g8"]
 
-[ext_resource type="Script" uid="uid://do572nmnpqgk4" path="res://PlungerScript.gd" id="1_x7mfp"]
+[ext_resource type="Script" uid="uid://do572nmnpqgk4" path="res://Script/PlungerScript.gd" id="1_x7mfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djjvq"]
 
