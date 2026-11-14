@@ -6,14 +6,25 @@
 [ext_resource type="Script" uid="uid://ccdab14ydmv3p" path="res://ArchWallScript.gd" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cteiitybluc11" path="res://wall.tscn" id="5_7jktm"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mwb40"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qontd"]
+size = Vector2(63, 9.5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_djjvq"]
 radius = 108.11568
 
 [node name="Node2D" type="Node2D" unique_id=705827619]
+
+[node name="pinballthing" type="RigidBody2D" parent="." unique_id=1565457186]
+physics_material_override = SubResource("PhysicsMaterial_e2o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pinballthing" unique_id=1982151666]
+material = SubResource("CanvasItemMaterial_mwb40")
+position = Vector2(681, 569)
+shape = SubResource("RectangleShape2D_qontd")
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=490644208]
 position = Vector2(1007, 474)
