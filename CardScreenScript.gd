@@ -10,19 +10,20 @@ var ball_scene: PackedScene = preload("res://Screen/ball.tscn")
 ]
 
 var upgrade_options: Array[Dictionary] = [
-	{"title": "Stronger Flippers", "effect": _stronger_flippers},
-	{"title": "Bigger Balls", "effect": _bigger_balls},
-	{"title": "Bonus Ball", "effect": _bonus_ball},
-	{"title": "Bouncier Balls", "effect": _bouncier_balls},
-	{"title": "Lighter Balls", "effect": _lighter_balls}
+	{"title": "Stronger Flippers", "effect": _stronger_flippers, "weight": 10, "rare": false},
+	{"title": "Bigger Balls", "effect": _bigger_balls, "weight": 10, "rare": false},
+	{"title": "Bouncier Balls", "effect": _bouncier_balls, "weight": 10, "rare": false},
+	{"title": "Lighter Balls", "effect": _lighter_balls, "weight": 8, "rare": false},
+	{"title": "Bonus Ball", "effect": _bonus_ball, "weight": 4, "rare": true},
+	{"title": "2x Points (Permanent)", "effect": _double_points, "weight": 2, "rare": true}
 ]
 
 var debuff_options: Array[Dictionary] = [
-	{"title": "Weaker Flippers", "effect": _weaker_flippers},
-	{"title": "Smaller Balls", "effect": _smaller_balls},
-	{"title": "Less Bouncy Balls", "effect": _less_bouncy_balls},
-	{"title": "Heavier Balls", "effect": _heavier_balls},
-	{"title": "Slippery Flippers", "effect": _slippery_flippers}
+	{"title": "Weaker Flippers", "effect": _weaker_flippers, "weight": 10, "rare": false},
+	{"title": "Smaller Balls", "effect": _smaller_balls, "weight": 10, "rare": false},
+	{"title": "Less Bouncy Balls", "effect": _less_bouncy_balls, "weight": 10, "rare": false},
+	{"title": "Heavier Balls", "effect": _heavier_balls, "weight": 8, "rare": false},
+	{"title": "Slippery Flippers", "effect": _slippery_flippers, "weight": 5, "rare": true}
 ]
 
 var active_choices: Array[Dictionary] = []
@@ -40,15 +41,36 @@ func _close_menu() -> void:
 func _roll_cards(is_debuff: bool) -> void:
 	var source_list := debuff_options if is_debuff else upgrade_options
 	var pool := source_list.duplicate()
-	pool.shuffle()
-	active_choices = pool.slice(0, 3)
+	active_choices.clear()
 	
+	# Pick 3 unique cards using weighted random chance
 	for i in range(cards.size()):
-		cards[i].text = active_choices[i]["title"]
-		cards[i].modulate = Color(1.0, 0.5, 0.5) if is_debuff else Color.WHITE
+		if pool.is_empty():
+			break
+		var picked := _pick_weighted_card(pool)
+		active_choices.append(picked)
+		pool.erase(picked) # Remove so the same card can't appear twice in one hand
+		
+		cards[i].text = picked["title"]
+		if is_debuff:
+			cards[i].modulate = Color(1.0, 0.35, 0.35) if picked["rare"] else Color(1.0, 0.65, 0.65)
+		else:
+			cards[i].modulate = Color(1.0, 0.85, 0.25) if picked["rare"] else Color.WHITE
+
+func _pick_weighted_card(pool: Array[Dictionary]) -> Dictionary:
+	var total_weight: int = 0
+	for item in pool:
+		total_weight += item["weight"]
+		
+	var roll: int = randi_range(1, total_weight)
+	var current: int = 0
+	for item in pool:
+		current += item["weight"]
+		if roll <= current:
+			return item
+	return pool[0]
 
 func _on_card_1_pressed() -> void:
-
 	_apply_choice(0)
 
 func _on_card_2_pressed() -> void:
@@ -78,6 +100,9 @@ func _bouncier_balls() -> void:
 
 func _lighter_balls() -> void:
 	get_tree().call_group("ball", "change_weight", 0.75)
+
+func _double_points() -> void:
+	Global.double_multiplier()
 
 # --- Debuff Effects ---
 func _weaker_flippers() -> void:
