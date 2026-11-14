@@ -31,12 +31,12 @@ script = ExtResource("1_yamjm")
 [node name="BallShape" type="CollisionShape2D" parent="Ball" unique_id=2083528634]
 material = SubResource("CanvasItemMaterial_mwb40")
 position = Vector2(57.320305, -46.67971)
-scale = Vector2(0.44000244, 0.44000244)
+scale = Vector2(0.3, 0.3)
 shape = SubResource("CircleShape2D_djjvq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=376801099]
 position = Vector2(57.320305, -46.67971)
-scale = Vector2(0.22, 0.22)
+scale = Vector2(0.14, 0.14)
 texture = ExtResource("1_bg0jk")
 
 [node name="Flipper" parent="." unique_id=432080427 instance=ExtResource("2_yekch")]
@@ -91,6 +91,11 @@ length = 500.0
 [node name="StraightWall2" parent="." unique_id=1461853038 instance=ExtResource("5_yamjm")]
 position = Vector2(598, 15)
 length = 1500.0
+
+[node name="StraightWall2" parent="StraightWall2" unique_id=1390685638 instance=ExtResource("5_yamjm")]
+position = Vector2(-384.99994, 492.99994)
+rotation = 0.43458697
+length = 500.0
 
 [node name="ArchWall2" type="StaticBody2D" parent="." unique_id=147388884]
 position = Vector2(230, 230)
