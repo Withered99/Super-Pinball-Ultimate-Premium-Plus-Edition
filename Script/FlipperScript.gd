@@ -13,6 +13,12 @@ func _ready() -> void:
 		active_angle_deg = -active_angle_deg
 		
 	rotation_degrees = rest_angle_deg
+	
+	add_to_group("flipper")
+	
+
+func increase_strength(multiplier: float) -> void:
+	flip_speed *= multiplier
 
 func _physics_process(delta: float) -> void:
 	var target_deg := active_angle_deg if Input.is_action_pressed(input_action) else rest_angle_deg
