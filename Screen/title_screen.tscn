@@ -1,37 +1,64 @@
 [gd_scene format=3 uid="uid://bycm7rnv4u4uv"]
 
-[ext_resource type="Script" uid="uid://bfp3orq16s0au" path="res://Script/button.gd" id="1_ta4t4"]
-[ext_resource type="Texture2D" uid="uid://c6rlx3od5b8e4" path="res://Assets/Logo.png" id="2_8udhx"]
+[ext_resource type="Script" uid="uid://dmsnsora4yc5t" path="res://Screen/TitleScreenScript.gd" id="1_8udhx"]
+[ext_resource type="Script" uid="uid://yb5jv4h6pyyt" path="res://MenuScreenScript.gd" id="1_ta4t4"]
 
 [node name="Title Screen" type="Node2D" unique_id=146363360]
 scale = Vector2(1.007853, 1.0181996)
+script = ExtResource("1_8udhx")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1238312795]
-position = Vector2(466.3379, 286.7807)
+[node name="Background" type="ColorRect" parent="." unique_id=328542608]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.738934, 49.78792)
+color = Color(0.10846979, 0.30220735, 0.32694066, 1)
 
-[node name="Container" type="Control" parent="Node2D" unique_id=666256217]
+[node name="PauseScreen" type="CanvasLayer" parent="." unique_id=1767372335]
+
+[node name="pause" type="Control" parent="PauseScreen" unique_id=1198790298]
+process_mode = 3
+visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_left = -466.33792
-offset_top = -286.7807
-offset_right = -426.33792
-offset_bottom = -246.7807
-scale = Vector2(3.540602, 3.28119)
-offset_transform_enabled = true
-
-[node name="Button" type="Button" parent="Node2D/Container" unique_id=59247895]
-layout_mode = 0
-offset_left = 93.87945
-offset_top = 82.91164
-offset_right = 230.35495
-offset_bottom = 158.34027
-text = "Start
-"
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ta4t4")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Container" unique_id=2093989625]
-position = Vector2(171.22491, 46.993237)
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("2_8udhx")
+[node name="shade" type="ColorRect" parent="PauseScreen/pause" unique_id=1379865280]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65882355)
 
-[connection signal="pressed" from="Node2D/Container/Button" to="Node2D/Container/Button" method="_on_pressed"]
+[node name="Center" type="CenterContainer" parent="PauseScreen/pause" unique_id=577727962]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="butts" type="VBoxContainer" parent="PauseScreen/pause/Center" unique_id=1683281665]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="play" type="Button" parent="PauseScreen/pause/Center/butts" unique_id=408451027]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="highscores" type="Button" parent="PauseScreen/pause/Center/butts" unique_id=1606862109]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Highscores"
+
+[connection signal="pressed" from="PauseScreen/pause/Center/butts/play" to="PauseScreen/pause" method="_on_play_pressed"]
+[connection signal="pressed" from="PauseScreen/pause/Center/butts/highscores" to="PauseScreen/pause" method="_on_highscores_pressed"]

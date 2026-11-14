@@ -48,6 +48,7 @@ func _roll_cards(is_debuff: bool) -> void:
 		cards[i].modulate = Color(1.0, 0.5, 0.5) if is_debuff else Color.WHITE
 
 func _on_card_1_pressed() -> void:
+
 	_apply_choice(0)
 
 func _on_card_2_pressed() -> void:
