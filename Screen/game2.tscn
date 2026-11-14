@@ -40,7 +40,7 @@ scale = Vector2(0.14, 0.14)
 texture = ExtResource("1_bg0jk")
 
 [node name="Flipper" parent="." unique_id=432080427 instance=ExtResource("2_yekch")]
-position = Vector2(450.00003, 603)
+position = Vector2(450, 1903)
 scale = Vector2(3.520002, 3.520002)
 rest_angle_deg = 90.0
 active_angle_deg = 10.0
@@ -53,7 +53,7 @@ scale = Vector2(0.048, 0.048)
 texture = ExtResource("3_thykx")
 
 [node name="Flipper2" parent="." unique_id=301296536 instance=ExtResource("2_yekch")]
-position = Vector2(700, 603)
+position = Vector2(700, 1903)
 scale = Vector2(3.520002, 3.520002)
 input_action = "ui_right"
 is_right_flipper = true
@@ -86,14 +86,39 @@ polygon = PackedVector2Array(-230, -2.8166878e-14, -229.72295, -11.285565, -228.
 [node name="StraightWall" parent="." unique_id=601931555 instance=ExtResource("5_yamjm")]
 position = Vector2(1137, 478)
 rotation = 1.5707964
+length = 3300.0
+
+[node name="StraightWall5" parent="StraightWall" unique_id=966920270 instance=ExtResource("5_yamjm")]
+position = Vector2(679.00006, 257.99994)
+rotation = 3.138102
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="StraightWall6" parent="StraightWall" unique_id=983114611 instance=ExtResource("5_yamjm")]
+position = Vector2(679, 862)
+rotation = 3.138102
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="StraightWall2" parent="StraightWall" unique_id=997330697 instance=ExtResource("5_yamjm")]
+position = Vector2(1287.9999, 192)
+rotation = -2.0542526
 length = 500.0
+
+[node name="StraightWall3" parent="StraightWall" unique_id=86271287 instance=ExtResource("5_yamjm")]
+position = Vector2(421, 5)
+rotation = 1.1327187
+length = 600.0
+
+[node name="StraightWall4" parent="StraightWall" unique_id=1388241693 instance=ExtResource("5_yamjm")]
+position = Vector2(421, 1118)
+rotation = -1.1327187
+length = 600.0
 
 [node name="StraightWall2" parent="." unique_id=1461853038 instance=ExtResource("5_yamjm")]
 position = Vector2(598, 15)
 length = 1500.0
 
 [node name="StraightWall2" parent="StraightWall2" unique_id=1390685638 instance=ExtResource("5_yamjm")]
-position = Vector2(-384.99994, 492.99994)
+position = Vector2(-399.99994, 1766.9999)
 rotation = 0.43458697
 length = 500.0
 
@@ -111,7 +136,7 @@ polygon = PackedVector2Array(-230, -2.8166878e-14, -229.72295, -11.285565, -228.
 [node name="StraightWall3" parent="." unique_id=1129837956 instance=ExtResource("5_yamjm")]
 position = Vector2(15, 478)
 rotation = 1.5707964
-length = 500.0
+length = 3300.0
 
 [node name="PauseScreen" type="CanvasLayer" parent="." unique_id=1732957286]
 
@@ -171,7 +196,7 @@ text = "RETRY NOW
 script = ExtResource("9_thykx")
 
 [node name="lose" type="CollisionShape2D" parent="loser" unique_id=1465086795]
-position = Vector2(576.625, 718)
+position = Vector2(577, 2021)
 shape = SubResource("RectangleShape2D_qontd")
 
 [connection signal="pressed" from="PauseScreen/pause2/Center/butts/resume" to="PauseScreen/pause2" method="_on_resume_pressed"]
