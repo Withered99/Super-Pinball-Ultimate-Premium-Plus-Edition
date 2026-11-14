@@ -1,30 +1,21 @@
 [gd_scene format=3 uid="uid://b6nn44mday47o"]
 
-[ext_resource type="Texture2D" uid="uid://bxlmfocxl7g80" path="res://verity.png" id="1_80nbo"]
-[ext_resource type="PackedScene" uid="uid://c7ydg3i32e17c" path="res://Flippers.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://kfrhi0eoa2g8" path="res://Plunger.tscn" id="3_feb5d"]
-[ext_resource type="Script" uid="uid://ccdab14ydmv3p" path="res://ArchWallScript.gd" id="4_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://cteiitybluc11" path="res://wall.tscn" id="5_7jktm"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mwb40"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qontd"]
-size = Vector2(63, 9.5)
+[ext_resource type="Texture2D" uid="uid://doyslupi2l036" path="res://Assets/Ball.png" id="1_6oqgr"]
+[ext_resource type="PackedScene" uid="uid://c7ydg3i32e17c" path="res://Screen/Flippers.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://dj17dyfwkk3a7" path="res://Assets/FlipperR.png" id="3_23lt3"]
+[ext_resource type="PackedScene" uid="uid://kfrhi0eoa2g8" path="res://Screen/Plunger.tscn" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://ccdab14ydmv3p" path="res://Script/ArchWallScript.gd" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://cteiitybluc11" path="res://Screen/wall.tscn" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://bxscrjqdw6liu" path="res://Assets/FlipperL.png" id="5_jdwji"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mwb40"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_djjvq"]
 radius = 108.11568
 
 [node name="Node2D" type="Node2D" unique_id=705827619]
-
-[node name="pinballthing" type="RigidBody2D" parent="." unique_id=1565457186]
-physics_material_override = SubResource("PhysicsMaterial_e2o6t")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pinballthing" unique_id=1982151666]
-material = SubResource("CanvasItemMaterial_mwb40")
-position = Vector2(681, 569)
-shape = SubResource("RectangleShape2D_qontd")
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=490644208]
 position = Vector2(1007, 474)
@@ -32,34 +23,46 @@ physics_material_override = SubResource("PhysicsMaterial_e2o6t")
 
 [node name="BallShape" type="CollisionShape2D" parent="Ball" unique_id=2083528634]
 material = SubResource("CanvasItemMaterial_mwb40")
-position = Vector2(57.320305, -46.67971)
-scale = Vector2(0.44000244, 0.44000244)
+position = Vector2(83.84057, -34.159355)
+scale = Vector2(0.28000492, 0.28000492)
 shape = SubResource("CircleShape2D_djjvq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=376801099]
-position = Vector2(57.320305, -46.67971)
-scale = Vector2(0.44000244, 0.44000244)
-texture = ExtResource("1_80nbo")
+position = Vector2(83.84057, -34.159355)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("1_6oqgr")
 
 [node name="Flipper" parent="." unique_id=432080427 instance=ExtResource("2_e2o6t")]
-position = Vector2(450.00003, 603)
+position = Vector2(450, 597)
 scale = Vector2(3.520002, 3.520002)
 rest_angle_deg = 90.0
 active_angle_deg = 10.0
 flip_speed = 15.0
 
+[node name="Sprite2D" type="Sprite2D" parent="Flipper" unique_id=1298699672]
+position = Vector2(0.28409576, -9.943176)
+rotation = -1.5707964
+scale = Vector2(0.051812373, 0.03190319)
+texture = ExtResource("5_jdwji")
+
 [node name="Flipper2" parent="." unique_id=301296536 instance=ExtResource("2_e2o6t")]
-position = Vector2(700, 603)
-scale = Vector2(3.520002, 3.520002)
+position = Vector2(700, 597)
+scale = Vector2(3.52, 3.52)
 input_action = "ui_right"
 is_right_flipper = true
 rest_angle_deg = 90.0
-active_angle_deg = 10.0
+active_angle_deg = -10.0
 flip_speed = 15.0
 
+[node name="Sprite2D" type="Sprite2D" parent="Flipper2" unique_id=652039516]
+position = Vector2(2.6645353e-14, -8.522727)
+rotation = 1.5707964
+scale = Vector2(0.04545249, 0.04545249)
+texture = ExtResource("3_23lt3")
+
 [node name="Plunger" parent="." unique_id=1633805535 instance=ExtResource("3_feb5d")]
-position = Vector2(1074, 598.00006)
-scale = Vector2(4.8925734, 4.8925734)
+position = Vector2(1093, 598.00006)
+scale = Vector2(3.0125756, 4.8925734)
 
 [node name="ArchWall" type="StaticBody2D" parent="." unique_id=272073015]
 position = Vector2(922, 230)

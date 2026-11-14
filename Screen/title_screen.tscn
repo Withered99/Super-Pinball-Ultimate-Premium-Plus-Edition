@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://s2jf4wssb4kn"]
+
+[node name="Title Screen" type="Node2D" unique_id=146363360]
+scale = Vector2(1.007853, 1.0181996)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1238312795]
+position = Vector2(466.3379, 286.7807)
+
+[node name="Container" type="Control" parent="Node2D" unique_id=666256217]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -466.33792
+offset_top = -286.7807
+offset_right = -426.33792
+offset_bottom = -246.7807
+scale = Vector2(3.540602, 3.28119)
+offset_transform_enabled = true
+
+[node name="Label" type="Label" parent="Node2D/Container" unique_id=2031283140]
+layout_mode = 0
+offset_left = 109.572716
+offset_top = 37.415
+offset_right = 221.94783
+offset_bottom = 80.76876
+text = "Game Name"
