@@ -1,12 +1,22 @@
 [gd_scene format=3 uid="uid://b6nn44mday47o"]
 
+[ext_resource type="Texture2D" uid="uid://bxlmfocxl7g80" path="res://verity.png" id="1_80nbo"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3trgr"]
 bounce = 3.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mwb40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qontd"]
 size = Vector2(63, 9.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_djjvq"]
+radius = 108.11568
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djjvq"]
+size = Vector2(1193, 57)
 
 [node name="Node2D" type="Node2D" unique_id=705827619]
 
@@ -17,3 +27,22 @@ physics_material_override = SubResource("PhysicsMaterial_3trgr")
 material = SubResource("CanvasItemMaterial_mwb40")
 position = Vector2(47, 27)
 shape = SubResource("RectangleShape2D_qontd")
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=490644208]
+position = Vector2(547, 290)
+physics_material_override = SubResource("PhysicsMaterial_e2o6t")
+
+[node name="BallShape" type="CollisionShape2D" parent="Ball" unique_id=2083528634]
+material = SubResource("CanvasItemMaterial_mwb40")
+position = Vector2(130, -116)
+shape = SubResource("CircleShape2D_djjvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=376801099]
+position = Vector2(130, -116)
+texture = ExtResource("1_80nbo")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=475304120]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1657404646]
+position = Vector2(567, 617)
+shape = SubResource("RectangleShape2D_djjvq")
