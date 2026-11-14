@@ -5,12 +5,12 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3trgr"]
 bounce = 3.0
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mwb40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qontd"]
 size = Vector2(63, 9.5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e2o6t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_djjvq"]
 radius = 108.11568
@@ -25,20 +25,20 @@ physics_material_override = SubResource("PhysicsMaterial_3trgr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pinballthing" unique_id=1982151666]
 material = SubResource("CanvasItemMaterial_mwb40")
-position = Vector2(47, 27)
+position = Vector2(681, 569)
 shape = SubResource("RectangleShape2D_qontd")
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=490644208]
-position = Vector2(547, 290)
+position = Vector2(545, 323)
 physics_material_override = SubResource("PhysicsMaterial_e2o6t")
 
 [node name="BallShape" type="CollisionShape2D" parent="Ball" unique_id=2083528634]
 material = SubResource("CanvasItemMaterial_mwb40")
-position = Vector2(130, -116)
+position = Vector2(405, -185)
 shape = SubResource("CircleShape2D_djjvq")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=376801099]
-position = Vector2(130, -116)
+position = Vector2(139, -114)
 texture = ExtResource("1_80nbo")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=475304120]
