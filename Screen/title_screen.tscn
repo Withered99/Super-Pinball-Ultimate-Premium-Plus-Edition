@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://s2jf4wssb4kn"]
+[gd_scene format=3 uid="uid://bycm7rnv4u4uv"]
+
+[ext_resource type="Script" uid="uid://bfp3orq16s0au" path="res://Script/button.gd" id="1_ta4t4"]
 
 [node name="Title Screen" type="Node2D" unique_id=146363360]
 scale = Vector2(1.007853, 1.0181996)
@@ -23,3 +25,15 @@ offset_top = 37.415
 offset_right = 221.94783
 offset_bottom = 80.76876
 text = "Game Name"
+
+[node name="Button" type="Button" parent="Node2D/Container" unique_id=59247895]
+layout_mode = 0
+offset_left = 93.87945
+offset_top = 82.91164
+offset_right = 230.35495
+offset_bottom = 158.34027
+text = "Start
+"
+script = ExtResource("1_ta4t4")
+
+[connection signal="pressed" from="Node2D/Container/Button" to="Node2D/Container/Button" method="_on_pressed"]
