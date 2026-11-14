@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cteiitybluc11"]
+
+[ext_resource type="Script" uid="uid://2irtqxf8oi8o" path="res://StraightWallScript.gd" id="1_xxgf6"]
+
+[node name="StraightWall" type="StaticBody2D" unique_id=601931555]
+script = ExtResource("1_xxgf6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=480153636]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2054908039]

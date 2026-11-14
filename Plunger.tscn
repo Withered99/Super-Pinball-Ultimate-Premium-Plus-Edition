@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://kfrhi0eoa2g8"]
+
+[ext_resource type="Script" uid="uid://do572nmnpqgk4" path="res://PlungerScript.gd" id="1_x7mfp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djjvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfn8e"]
+size = Vector2(20, 4)
+
+[node name="Plunger" type="AnimatableBody2D" unique_id=1633805535]
+script = ExtResource("1_x7mfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=692625767]
+shape = SubResource("RectangleShape2D_djjvq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=752590338]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="LaunchZone" type="Area2D" parent="." unique_id=1526652410]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaunchZone" unique_id=69334360]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_qfn8e")

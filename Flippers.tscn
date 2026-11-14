@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c7ydg3i32e17c"]
+
+[ext_resource type="Script" uid="uid://c2sykb3nclqvk" path="res://FlipperScript.gd" id="1_nki4v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2o6t"]
+
+[node name="Flipper" type="AnimatableBody2D" unique_id=432080427]
+script = ExtResource("1_nki4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1569240323]
+position = Vector2(0, -11)
+scale = Vector2(0.31999934, 1)
+shape = SubResource("CapsuleShape2D_e2o6t")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=2093334313]
+offset_left = -9.375015
+offset_top = -14.0
+offset_right = 30.624985
+offset_bottom = 26.0
+scale = Vector2(0.44499832, 0.68)
