@@ -1,5 +1,3 @@
 [gd_scene format=3 uid="uid://b6nn44mday47o"]
 
 [node name="Node2D" type="Node2D" unique_id=705827619]
-
-[node name="Bone2D" type="Bone2D" parent="." unique_id=512523197]
