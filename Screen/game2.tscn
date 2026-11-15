@@ -27,8 +27,8 @@ default_font_size = 48
 script = ExtResource("11_s6sd8")
 
 [node name="Flipper" parent="." unique_id=432080427 instance=ExtResource("2_yekch")]
-position = Vector2(450, 1903)
-scale = Vector2(3.520002, 3.520002)
+position = Vector2(401, 1889.0001)
+scale = Vector2(5, 5)
 rest_angle_deg = 90.0
 active_angle_deg = 10.0
 flip_speed = 15.0
@@ -40,8 +40,8 @@ scale = Vector2(0.048, 0.048)
 texture = ExtResource("3_thykx")
 
 [node name="Flipper2" parent="." unique_id=301296536 instance=ExtResource("2_yekch")]
-position = Vector2(700, 1903)
-scale = Vector2(3.520002, 3.520002)
+position = Vector2(733, 1884.9999)
+scale = Vector2(5, 5)
 input_action = "ui_right"
 is_right_flipper = true
 rest_angle_deg = 90.0
@@ -87,7 +87,7 @@ rotation = 3.138102
 scale = Vector2(0.9999999, 0.9999999)
 
 [node name="StraightWall2" parent="StraightWall" unique_id=997330697 instance=ExtResource("5_yamjm")]
-position = Vector2(1287.9999, 192)
+position = Vector2(1304.9998, 156)
 rotation = -2.0542526
 length = 500.0
 
@@ -116,7 +116,7 @@ position = Vector2(598, 15)
 length = 1500.0
 
 [node name="StraightWall2" parent="StraightWall2" unique_id=1390685638 instance=ExtResource("5_yamjm")]
-position = Vector2(-399.99994, 1766.9999)
+position = Vector2(-452, 1778.9999)
 rotation = 0.43458697
 length = 500.0
 
@@ -262,7 +262,7 @@ theme_override_font_sizes/font_size = 32
 text = "Card 3"
 
 [node name="Ball" parent="." unique_id=2098056954 instance=ExtResource("2_s6sd8")]
-position = Vector2(1007, 474)
+position = Vector2(1032, 470)
 
 [node name="Bumper" parent="." unique_id=618282309 instance=ExtResource("12_qocpp")]
 position = Vector2(147, 1338)
@@ -273,7 +273,7 @@ scale = Vector2(0.232, 0.23046096)
 texture = ExtResource("14_x47ju")
 
 [node name="Bumper8" parent="." unique_id=259082627 instance=ExtResource("12_qocpp")]
-position = Vector2(426, 1568)
+position = Vector2(276, 1520)
 launch_force = 1200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper8" unique_id=406230925]
@@ -282,7 +282,7 @@ scale = Vector2(0.232, 0.23046096)
 texture = ExtResource("13_742v1")
 
 [node name="Bumper10" parent="." unique_id=1003528602 instance=ExtResource("12_qocpp")]
-position = Vector2(726, 1568)
+position = Vector2(871, 1526)
 launch_force = 1200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper10" unique_id=2084460620]
@@ -309,7 +309,7 @@ scale = Vector2(0.232, 0.23046096)
 texture = ExtResource("13_742v1")
 
 [node name="Bumper4" parent="." unique_id=2077089040 instance=ExtResource("12_qocpp")]
-position = Vector2(700, 1081)
+position = Vector2(873, 1019)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper4" unique_id=949842210]
 position = Vector2(-6.914139e-06, 7.867813e-05)
@@ -325,7 +325,7 @@ scale = Vector2(0.23790325, 0.22664018)
 texture = ExtResource("14_x47ju")
 
 [node name="Bumper5" parent="." unique_id=1996889430 instance=ExtResource("12_qocpp")]
-position = Vector2(450, 1081)
+position = Vector2(282, 1017)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper5" unique_id=361166955]
 position = Vector2(-6.914139e-06, 7.867813e-05)
