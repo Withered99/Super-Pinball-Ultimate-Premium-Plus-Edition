@@ -78,7 +78,7 @@ rotation = 1.5707964
 length = 3300.0
 
 [node name="StraightWall5" parent="StraightWall" unique_id=966920270 instance=ExtResource("5_yamjm")]
-position = Vector2(679.00006, 257.99994)
+position = Vector2(679, 258.99994)
 rotation = 3.138102
 scale = Vector2(0.9999999, 0.9999999)
 
