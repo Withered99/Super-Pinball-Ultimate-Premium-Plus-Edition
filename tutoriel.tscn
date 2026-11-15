@@ -1,9 +1,41 @@
 [gd_scene format=3 uid="uid://crb7jeifqy8m5"]
 
-[node name="Node2D" type="Node2D" unique_id=992537531]
+[ext_resource type="Script" uid="uid://b2gw6ii2amt23" path="res://tutoriel.gd" id="1_jxglp"]
+[ext_resource type="Texture2D" uid="uid://6eg47a85jmn8" path="res://Assets/controls67.png" id="1_vwwid"]
+[ext_resource type="Script" uid="uid://c5auf2ubdu4kn" path="res://tutorials.gd" id="3_vxf2t"]
 
-[node name="Background" type="ColorRect" parent="." unique_id=1512530448]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Node2D" type="Node2D" unique_id=992537531]
+script = ExtResource("1_jxglp")
+
+[node name="Control" type="Control" parent="." unique_id=605902007]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 135.00002
+offset_top = 1524.0
+offset_right = 175.00002
+offset_bottom = 1564.0
+script = ExtResource("3_vxf2t")
+
+[node name="Background" type="ColorRect" parent="Control" unique_id=1512530448]
+layout_mode = 0
+offset_left = -135.00002
+offset_top = -1524.0
+offset_right = -95.000015
+offset_bottom = -1484.0
 scale = Vector2(29.738934, 49.78792)
 color = Color(0.10846979, 0.30220735, 0.32694066, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Background" unique_id=1338666779]
+position = Vector2(19.52672, 19.884342)
+scale = Vector2(0.03399352, 0.02)
+texture = ExtResource("1_vwwid")
+
+[node name="mainScreenButt" type="Button" parent="Control" unique_id=1843119733]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 39.999985
+offset_top = 102.0
+offset_right = 742.0
+offset_bottom = 361.0
+
+[connection signal="pressed" from="Control/mainScreenButt" to="Control" method="_on_main_screen_butt_pressed"]
