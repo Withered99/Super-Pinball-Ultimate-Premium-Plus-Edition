@@ -265,7 +265,7 @@ text = "Card 3"
 position = Vector2(1007, 474)
 
 [node name="Bumper" parent="." unique_id=618282309 instance=ExtResource("12_qocpp")]
-position = Vector2(157, 1368)
+position = Vector2(147, 1338)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper" unique_id=1309884174]
 position = Vector2(1.9999914, -0.50001657)
@@ -343,7 +343,7 @@ scale = Vector2(0.23790325, 0.22664018)
 texture = ExtResource("15_x47ju")
 
 [node name="Bumper2" parent="." unique_id=1545574663 instance=ExtResource("12_qocpp")]
-position = Vector2(1000, 1368)
+position = Vector2(1010, 1328)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper2" unique_id=697316510]
 position = Vector2(-4.6250105, -3.9696693e-05)
