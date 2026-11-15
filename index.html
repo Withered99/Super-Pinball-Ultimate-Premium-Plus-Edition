@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Scores</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --gold: #fbbf24;
+      --silver: #cbd5e1;
+      --bronze: #d97706;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .board {
+      width: 100%;
+      max-width: 520px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.04em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th:last-child, td:last-child {
+      text-align: right;
+    }
+
+    td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .rank { font-weight: 700; width: 3.5rem; color: var(--muted); }
+    tr:nth-child(1) .rank { color: var(--gold); }
+    tr:nth-child(2) .rank { color: var(--silver); }
+    tr:nth-child(3) .rank { color: var(--bronze); }
+
+    .score {
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .status {
+      text-align: center;
+      color: var(--muted);
+      padding: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <h1>High Scores</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard">
+        <tr><td colspan="3" class="status">Loading scores...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzUtZLCshfp8PC1sio8KXwWWrnDGG5TpmSgFt11zD6qTvhyNWpYE6Xq9g7FjYdt2zTo/exec";
+
+    async function loadLeaderboard() {
+      const tbody = document.getElementById("leaderboard");
+
+      try {
+        const response = await fetch(APPS_SCRIPT_URL);
+        if (!response.ok) throw new Error("Network response was not ok");
+
+        const top10 = await response.json();
+
+        if (!Array.isArray(top10) || top10.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="3" class="status">No scores yet.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = top10
+          .map((entry, index) => `
+            <tr>
+              <td class="rank">${index + 1}</td>
+              <td>${escapeHTML(String(entry.name))}</td>
+              <td class="score">${Number(entry.score).toLocaleString()}</td>
+            </tr>
+          `)
+          .join("");
+      } catch (err) {
+        console.error(err);
+        tbody.innerHTML = `<tr><td colspan="3" class="status">Could not load scores.</td></tr>`;
+      }
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>"']/g, tag => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[tag]));
+    }
+
+    loadLeaderboard();
+  </script>
+</body>
+</html>
