@@ -16,7 +16,6 @@ func _ready() -> void:
 	http.request_completed.connect(_on_request_completed)
 
 func show_game_over() -> void:
-	# Access your Global AutoLoad directly by name!
 	Global.stop_scoring()
 	final_score_label.text = "Final Score: %d" % Global.score
 	
