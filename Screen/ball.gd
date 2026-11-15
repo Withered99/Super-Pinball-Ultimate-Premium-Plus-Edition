@@ -20,6 +20,8 @@ func _ready() -> void:
 		physics_material_override = PhysicsMaterial.new()
 	else:
 		physics_material_override = physics_material_override.duplicate()
+		
+	sleeping = false
 
 func change_size(multiplier: float) -> void:
 	size_factor = clampf(size_factor * multiplier, 0.4, 2.5)
