@@ -28,28 +28,22 @@ func _update_arch() -> void:
 	if not is_inside_tree():
 		return
 		
-	var outer_points := PackedVector2Array()
-	var inner_points := PackedVector2Array()
-	var center_points := PackedVector2Array()
-	
+	var points := PackedVector2Array()
 	var start_angle := -PI
 	var end_angle := start_angle + deg_to_rad(arc_angle_deg)
-	var mid_radius := radius + (thickness * 0.5)
 	
 	for i in range(segments + 1):
 		var t := float(i) / segments
 		var angle: float = lerp(start_angle, end_angle, t)
-		var dir := Vector2(cos(angle), sin(angle))
+		points.append(Vector2(cos(angle), sin(angle)) * (radius + thickness))
 		
-		outer_points.append(dir * (radius + thickness))
-		inner_points.append(dir * radius)
-		center_points.append(dir * mid_radius)
+	for i in range(segments, -1, -1):
+		var t := float(i) / segments
+		var angle: float = lerp(start_angle, end_angle, t)
+		points.append(Vector2(cos(angle), sin(angle)) * radius)
+
 		
-	inner_points.reverse()
-	
 	if has_node("CollisionPolygon2D"):
-		$CollisionPolygon2D.polygon = outer_points + inner_points
-		
-	if has_node("Line2D"):
-		$Line2D.width = thickness
-		$Line2D.points = center_points
+		$CollisionPolygon2D.polygon = points
+	if has_node("Polygon2D"):
+		$Polygon2D.polygon = points
