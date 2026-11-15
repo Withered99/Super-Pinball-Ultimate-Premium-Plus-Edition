@@ -535,16 +535,11 @@ layout_mode = 2
 text = "Play Again
 "
 
-[node name="HTTPRequest" type="HTTPRequest" parent="GameOverLayer/Control/GameOverScreen" unique_id=1841638172]
-
-[node name="shade" type="ColorRect" parent="GameOverLayer/Control/GameOverScreen" unique_id=113427695]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="shade" type="ColorRect" parent="GameOverLayer/Control/GameOverScreen/CenterContainer" unique_id=113427695]
+layout_mode = 2
 color = Color(0, 0, 0, 0.65882355)
+
+[node name="HTTPRequest" type="HTTPRequest" parent="GameOverLayer/Control/GameOverScreen" unique_id=1841638172]
 
 [connection signal="pressed" from="PauseScreen/pause2/Center/butts/resume" to="PauseScreen/pause2" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseScreen/pause2/Center/butts/restart" to="PauseScreen/pause2" method="_on_restart_pressed"]
