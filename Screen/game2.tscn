@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://eo8dulwkr6qm"]
 
+[ext_resource type="Texture2D" uid="uid://bp3lfv2vgcts4" path="res://Assets/BG.webp" id="2_l2odb"]
 [ext_resource type="PackedScene" uid="uid://ls8pwj83yutg" path="res://Screen/ball.tscn" id="2_s6sd8"]
 [ext_resource type="PackedScene" uid="uid://c7ydg3i32e17c" path="res://Screen/Flippers.tscn" id="2_yekch"]
 [ext_resource type="PackedScene" uid="uid://kfrhi0eoa2g8" path="res://Screen/Plunger.tscn" id="3_jgit4"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cteiitybluc11" path="res://Screen/wall.tscn" id="5_yamjm"]
 [ext_resource type="Script" uid="uid://cdjxqwla451af" path="res://Script/pause_2.gd" id="6_s6sd8"]
 [ext_resource type="Script" uid="uid://b628mr785k2k8" path="res://Screen/area_2d.gd" id="9_thykx"]
+[ext_resource type="Texture2D" uid="uid://c6746xryrd027" path="res://Assets/walls.webp" id="9_tjk3d"]
 [ext_resource type="Script" uid="uid://clwyip67u6dfi" path="res://TimerScript.gd" id="11_s6sd8"]
 [ext_resource type="Script" uid="uid://c58t5f803xqub" path="res://CardScreenScript.gd" id="12_hls5k"]
 [ext_resource type="PackedScene" uid="uid://codij1mg8daop" path="res://Screen/bumper.tscn" id="12_qocpp"]
@@ -25,6 +27,11 @@ default_font_size = 48
 
 [node name="Node2D" type="Node2D" unique_id=705827619]
 script = ExtResource("11_s6sd8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=415017647]
+position = Vector2(583, 1055)
+scale = Vector2(2.8000019, 2.8000019)
+texture = ExtResource("2_l2odb")
 
 [node name="Flipper" parent="." unique_id=432080427 instance=ExtResource("2_yekch")]
 position = Vector2(401, 1906.285)
@@ -136,6 +143,11 @@ polygon = PackedVector2Array(-230, -2.8165946e-14, -229.98268, -2.8224537, -229.
 position = Vector2(15, 478)
 rotation = 1.5707964
 length = 3300.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=970984556]
+position = Vector2(574.00006, 991)
+scale = Vector2(2.6799994, 2.6799994)
+texture = ExtResource("9_tjk3d")
 
 [node name="PauseScreen" type="CanvasLayer" parent="." unique_id=1732957286]
 
@@ -293,6 +305,7 @@ position = Vector2(1032, 470)
 
 [node name="Bumper" parent="." unique_id=618282309 instance=ExtResource("12_qocpp")]
 position = Vector2(147, 1250)
+launch_force = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper" unique_id=1309884174]
 position = Vector2(1.9999914, -0.50001657)
@@ -301,7 +314,7 @@ texture = ExtResource("14_x47ju")
 
 [node name="Bumper8" parent="." unique_id=259082627 instance=ExtResource("12_qocpp")]
 position = Vector2(276, 1520)
-launch_force = 1200.0
+launch_force = 800.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper8" unique_id=406230925]
 position = Vector2(1.9999914, -0.50001657)
@@ -310,7 +323,7 @@ texture = ExtResource("13_742v1")
 
 [node name="Bumper10" parent="." unique_id=1003528602 instance=ExtResource("12_qocpp")]
 position = Vector2(871, 1526)
-launch_force = 1200.0
+launch_force = 800.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper10" unique_id=2084460620]
 position = Vector2(1.9999914, -0.50001657)
@@ -319,6 +332,7 @@ texture = ExtResource("13_742v1")
 
 [node name="Bumper9" parent="." unique_id=1256820625 instance=ExtResource("12_qocpp")]
 position = Vector2(576, 300)
+launch_force = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper9" unique_id=1804933214]
 position = Vector2(1.9999914, -0.50001657)
@@ -327,7 +341,7 @@ texture = ExtResource("14_x47ju")
 
 [node name="Bumper3" parent="." unique_id=890271225 instance=ExtResource("12_qocpp")]
 position = Vector2(157, 368)
-launch_force = 1200.0
+launch_force = 800.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper3" unique_id=496366055]
 position = Vector2(1.9999914, -0.50001657)
@@ -336,7 +350,7 @@ texture = ExtResource("13_742v1")
 
 [node name="Bumper13" parent="." unique_id=869216016 instance=ExtResource("12_qocpp")]
 position = Vector2(950, 368)
-launch_force = 1200.0
+launch_force = 800.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper13" unique_id=2133850163]
 position = Vector2(1.9999914, -0.50001657)
@@ -345,6 +359,7 @@ texture = ExtResource("13_742v1")
 
 [node name="Bumper4" parent="." unique_id=2077089040 instance=ExtResource("12_qocpp")]
 position = Vector2(873, 1019)
+launch_force = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper4" unique_id=949842210]
 position = Vector2(-6.914139e-06, 7.867813e-05)
@@ -353,7 +368,7 @@ texture = ExtResource("14_x47ju")
 
 [node name="Bumper7" parent="." unique_id=802257998 instance=ExtResource("12_qocpp")]
 position = Vector2(700, 631)
-launch_force = 300.0
+launch_force = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper7" unique_id=1324678309]
 position = Vector2(-6.914139e-06, 7.867813e-05)
@@ -362,6 +377,7 @@ texture = ExtResource("15_x47ju")
 
 [node name="Bumper5" parent="." unique_id=1996889430 instance=ExtResource("12_qocpp")]
 position = Vector2(282, 1017)
+launch_force = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper5" unique_id=361166955]
 position = Vector2(-6.914139e-06, 7.867813e-05)
@@ -370,6 +386,7 @@ texture = ExtResource("14_x47ju")
 
 [node name="Bumper14" parent="." unique_id=1763607071 instance=ExtResource("12_qocpp")]
 position = Vector2(576, 1250)
+launch_force = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper14" unique_id=390695367]
 position = Vector2(-6.914139e-06, 7.867813e-05)
@@ -378,7 +395,7 @@ texture = ExtResource("14_x47ju")
 
 [node name="Bumper6" parent="." unique_id=1798947093 instance=ExtResource("12_qocpp")]
 position = Vector2(450, 631)
-launch_force = 300.0
+launch_force = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper6" unique_id=795641955]
 position = Vector2(-6.914139e-06, 7.867813e-05)
@@ -388,7 +405,7 @@ texture = ExtResource("15_x47ju")
 [node name="Bumper11" parent="." unique_id=17052076 instance=ExtResource("12_qocpp")]
 position = Vector2(110.755, 1610)
 constant_linear_velocity = Vector2(0.085, 0)
-launch_force = 300.0
+launch_force = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper11" unique_id=45265984]
 position = Vector2(-6.914139e-06, 7.867813e-05)
@@ -397,7 +414,7 @@ texture = ExtResource("15_x47ju")
 
 [node name="Bumper12" parent="." unique_id=609765571 instance=ExtResource("12_qocpp")]
 position = Vector2(1042, 1610.28)
-launch_force = 300.0
+launch_force = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper12" unique_id=1497503106]
 position = Vector2(-6.914139e-06, 7.867813e-05)
@@ -406,6 +423,7 @@ texture = ExtResource("15_x47ju")
 
 [node name="Bumper2" parent="." unique_id=1545574663 instance=ExtResource("12_qocpp")]
 position = Vector2(1010, 1250.485)
+launch_force = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Bumper2" unique_id=697316510]
 position = Vector2(-4.6250105, -3.9696693e-05)

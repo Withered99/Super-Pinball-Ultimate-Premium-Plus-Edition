@@ -6,6 +6,7 @@ func _show() -> void:
 	$Center/butts/play.grab_focus()
 
 func _on_play_pressed() -> void:
+	MusicManager.play_music()
 	get_tree().change_scene_to_file("res://Screen/game2.tscn")
 
 func _on_highscores_pressed() -> void:
