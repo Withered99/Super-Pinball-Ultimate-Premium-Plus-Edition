@@ -191,11 +191,38 @@ theme_override_font_sizes/font_size = 32
 text = "RETRY NOW
 "
 
+[node name="loser3" type="Area2D" parent="." unique_id=1336742098]
+position = Vector2(4222, 318)
+script = ExtResource("9_thykx")
+
+[node name="lose" type="CollisionShape2D" parent="loser3" unique_id=640794140]
+position = Vector2(-1531, 867)
+scale = Vector2(2.6641452, 160.23688)
+shape = SubResource("RectangleShape2D_qontd")
+
+[node name="loser2" type="Area2D" parent="." unique_id=2135418904]
+script = ExtResource("9_thykx")
+
+[node name="lose" type="CollisionShape2D" parent="loser2" unique_id=1191381613]
+position = Vector2(-1531, 867)
+scale = Vector2(2.6641452, 160.23688)
+shape = SubResource("RectangleShape2D_qontd")
+
+[node name="loser4" type="Area2D" parent="." unique_id=535740522]
+position = Vector2(-332, -4986)
+script = ExtResource("9_thykx")
+
+[node name="lose" type="CollisionShape2D" parent="loser4" unique_id=1838965641]
+position = Vector2(362, 3499)
+scale = Vector2(5.054902, 149.19795)
+shape = SubResource("RectangleShape2D_qontd")
+
 [node name="loser" type="Area2D" parent="." unique_id=1016788057]
 script = ExtResource("9_thykx")
 
 [node name="lose" type="CollisionShape2D" parent="loser" unique_id=1465086795]
-position = Vector2(577, 2021)
+position = Vector2(362, 3499)
+scale = Vector2(5.054902, 149.19795)
 shape = SubResource("RectangleShape2D_qontd")
 
 [node name="Timer" type="Timer" parent="." unique_id=2146124272]
@@ -431,6 +458,9 @@ text = "Play Again
 
 [connection signal="pressed" from="PauseScreen/pause2/Center/butts/resume" to="PauseScreen/pause2" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseScreen/pause2/Center/butts/restart" to="PauseScreen/pause2" method="_on_restart_pressed"]
+[connection signal="body_entered" from="loser3" to="loser3" method="_on_body_entered"]
+[connection signal="body_entered" from="loser2" to="loser2" method="_on_body_entered"]
+[connection signal="body_entered" from="loser4" to="loser4" method="_on_body_entered"]
 [connection signal="body_entered" from="loser" to="loser" method="_on_body_entered"]
 [connection signal="pressed" from="CardScreen/cards/Center/butts/card1" to="CardScreen/cards" method="_on_card_1_pressed"]
 [connection signal="pressed" from="CardScreen/cards/Center/butts/card2" to="CardScreen/cards" method="_on_card_2_pressed"]
