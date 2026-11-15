@@ -60,5 +60,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Highscores"
 
+[node name="tutorial" type="Button" parent="PauseScreen/pause/Center/butts" unique_id=1341113509]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Basics in Behavior"
+
 [connection signal="pressed" from="PauseScreen/pause/Center/butts/play" to="PauseScreen/pause" method="_on_play_pressed"]
 [connection signal="pressed" from="PauseScreen/pause/Center/butts/highscores" to="PauseScreen/pause" method="_on_highscores_pressed"]
+[connection signal="pressed" from="PauseScreen/pause/Center/butts/tutorial" to="PauseScreen/pause" method="_on_tutorial_pressed"]

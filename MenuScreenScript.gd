@@ -8,3 +8,7 @@ func _on_play_pressed() -> void:
 
 func _on_highscores_pressed() -> void:
 	get_tree().reload_current_scene() 
+
+
+func _on_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res://tutoriel.tscn")
