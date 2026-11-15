@@ -1,6 +1,8 @@
 @tool
 extends StaticBody2D
 
+	
+
 @export var length: float = 300.0:
 	set(value):
 		length = value
@@ -13,6 +15,8 @@ extends StaticBody2D
 
 func _ready() -> void:
 	_update_wall()
+	add_to_group("bumper")
+
 
 func _update_wall() -> void:
 	if not is_inside_tree():

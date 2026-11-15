@@ -19,6 +19,36 @@
 [ext_resource type="Texture2D" uid="uid://q7wqkyfqreoi" path="res://Assets/bumper3-removebg-preview.png" id="15_x47ju"]
 [ext_resource type="Script" uid="uid://duhk0t6eehgmf" path="res://Screen/HTTPRequest.gd" id="16_cp2b2"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ggs4e"]
+bounce = 0.3
+absorbent = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cp2b2"]
+friction = 0.3
+bounce = 0.3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ymy3c"]
+bounce = 0.3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l2odb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tjk3d"]
+bounce = 0.3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lnjyo"]
+bounce = 0.3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_psvag"]
+bounce = 0.3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r8al3"]
+bounce = 0.3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4x8fq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gj3ym"]
+bounce = 0.3
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qontd"]
 size = Vector2(1151.25, 20)
 
@@ -81,50 +111,62 @@ polygon = PackedVector2Array(-230, -2.8165946e-14, -229.98268, -2.8224537, -229.
 [node name="StraightWall" parent="." unique_id=601931555 instance=ExtResource("5_yamjm")]
 position = Vector2(1137, 478)
 rotation = 1.5707964
+physics_material_override = SubResource("PhysicsMaterial_ggs4e")
 length = 3300.0
 
 [node name="StraightWall5" parent="StraightWall" unique_id=966920270 instance=ExtResource("5_yamjm")]
 position = Vector2(679, 258.99994)
 rotation = 3.138102
 scale = Vector2(0.9999999, 0.9999999)
+physics_material_override = SubResource("PhysicsMaterial_cp2b2")
 
 [node name="StraightWall6" parent="StraightWall" unique_id=983114611 instance=ExtResource("5_yamjm")]
 position = Vector2(679, 862)
 rotation = 3.138102
 scale = Vector2(0.9999999, 0.9999999)
+physics_material_override = SubResource("PhysicsMaterial_ymy3c")
 
 [node name="StraightWall2" parent="StraightWall" unique_id=997330697 instance=ExtResource("5_yamjm")]
 position = Vector2(1304.9998, 156)
 rotation = -2.0542526
+physics_material_override = SubResource("PhysicsMaterial_l2odb")
+constant_linear_velocity = Vector2(0.3, 0)
 length = 500.0
 
 [node name="StraightWall3" parent="StraightWall" unique_id=86271287 instance=ExtResource("5_yamjm")]
 position = Vector2(415, 5)
 rotation = 1.1327187
+physics_material_override = SubResource("PhysicsMaterial_tjk3d")
 length = 600.0
 
 [node name="StraightWall8" parent="StraightWall" unique_id=878320032 instance=ExtResource("5_yamjm")]
 position = Vector2(921, 5)
 rotation = 1.1327187
+physics_material_override = SubResource("PhysicsMaterial_lnjyo")
 length = 600.0
 
 [node name="StraightWall4" parent="StraightWall" unique_id=1388241693 instance=ExtResource("5_yamjm")]
 position = Vector2(415, 1118)
 rotation = -1.1327187
+physics_material_override = SubResource("PhysicsMaterial_psvag")
 length = 600.0
 
 [node name="StraightWall7" parent="StraightWall" unique_id=252096774 instance=ExtResource("5_yamjm")]
 position = Vector2(921, 1118)
 rotation = -1.1327187
+physics_material_override = SubResource("PhysicsMaterial_r8al3")
 length = 600.0
 
 [node name="StraightWall2" parent="." unique_id=1461853038 instance=ExtResource("5_yamjm")]
 position = Vector2(598, 15)
+physics_material_override = SubResource("PhysicsMaterial_4x8fq")
+constant_linear_velocity = Vector2(0.3, 0)
 length = 1500.0
 
 [node name="StraightWall2" parent="StraightWall2" unique_id=1390685638 instance=ExtResource("5_yamjm")]
 position = Vector2(-452, 1778.9999)
 rotation = 0.43458697
+physics_material_override = SubResource("PhysicsMaterial_gj3ym")
 length = 500.0
 
 [node name="ArchWall2" type="StaticBody2D" parent="." unique_id=147388884]
