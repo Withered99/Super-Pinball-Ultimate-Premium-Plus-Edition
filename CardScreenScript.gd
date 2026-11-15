@@ -1,7 +1,7 @@
 extends Control
 
 var ball_scene: PackedScene = preload("res://Screen/ball.tscn")
-@export var spawn_position: Vector2 = Vector2(1007.0, 474.0)
+@export var spawn_position: Vector2 = Vector2(1032.0, 470.0)
 
 @onready var cards: Array[Button] = [
 	$Center/butts/card1,
